@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--c-bg, #1d1b2f);
+  font-family: system-ui, sans-serif;
+  color: var(--c-text, #fef9ef);
+  touch-action: manipulation;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#ui-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.screen {
+  pointer-events: auto;
+}
+
+.screen.hidden {
+  display: none;
+}
+
+.screen.overlay {
+  background: rgba(29, 27, 47, 0.72);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+#screen-start {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, transparent 40%, rgba(29, 27, 47, 0.85));
+}
+
+#screen-start h1 {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--c-accent, #ff6b6b);
+  margin-bottom: 0.5rem;
+}
+
+.sub {
+  max-width: 28rem;
+  opacity: 0.92;
+  margin-bottom: 1rem;
+}
+
+.hint {
+  font-size: 1.1rem;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.controls {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  #screen-start .controls:not(.mobile-only) {
+    display: none;
+  }
+}
+
+.credit {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
+#screen-hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hud-top {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#hud-combo {
+  color: var(--c-accent, #ff6b6b);
+}
+
+#btn-pause,
+#btn-mute {
+  pointer-events: auto;
+  border: none;
+  background: rgba(91, 95, 151, 0.65);
+  color: inherit;
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#btn-mute {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+button {
+  pointer-events: auto;
+  border: none;
+  background: var(--c-accent, #ff6b6b);
+  color: #1d1b2f;
+  font-weight: 700;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#screen-pause h2,
+#screen-end h2 {
+  font-size: 1.8rem;
+}

@@ -1,0 +1,8 @@
+id,kind,role,source,size,file,prompt_or_note
+mage,model,player,BrainDaemon character library,~3 units tall,public/assets/models/mage.glb,CC0 mage; clips Idle/Walking_A/Running_A/Jump_Full_Short/Hit_A/Death_A; scale to 1.8m
+rooftops,code,environment,code,,,"Procedural roof segments chimneys gaps; STYLE line in world.js"
+package,code,pickup,code,,,"Instanced glowing crate; palette highlight #ff6b6b"
+sky_tex,code,background,code,512x512,,"Gradient cel sky drawn to canvas"
+ui_panel,code,ui,code,,,"HUD and menus HTML/CSS palette colours"
+sfx,sfx,audio,code,,,"ZzFX jump collect hit ui lose"
+music,music,audio,code,,,"ZzFXM rooftop chase loop"
